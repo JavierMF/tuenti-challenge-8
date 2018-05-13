@@ -14,7 +14,7 @@ public class Application {
             int verticalLines = scanner.nextInt();
             int horizontalLines = scanner.nextInt();
 
-            int squares = (verticalLines - 1) * (horizontalLines - 1);
+            int squares = new Waffle(verticalLines, horizontalLines).squares();
             System.out.println(String.format("Case #%d: %d", i + 1, squares));
         }
     }

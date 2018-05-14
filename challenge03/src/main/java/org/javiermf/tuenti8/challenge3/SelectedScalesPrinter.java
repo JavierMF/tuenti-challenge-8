@@ -2,9 +2,10 @@ package org.javiermf.tuenti8.challenge3;
 
 import org.javiermf.tuenti8.challenge3.scales.Scale;
 
-import java.util.Comparator;
 import java.util.Set;
 import java.util.stream.Stream;
+
+import static java.util.Comparator.comparing;
 
 public class SelectedScalesPrinter {
     private final Set<Scale> scalesToPrint;
@@ -19,12 +20,10 @@ public class SelectedScalesPrinter {
         }
 
         Stream<Scale> sortedScales = scalesToPrint.stream()
-                .sorted(Comparator.comparing(Scale::getSortingWeight));
+                .sorted(comparing(Scale::getSortingWeight));
 
-        StringBuffer buffer = new StringBuffer();
-        sortedScales.forEach((scale -> {
-            buffer.append(scale);
-        }));
+        StringBuilder buffer = new StringBuilder();
+        sortedScales.forEach((scale -> buffer.append(scale)));
         return buffer.toString();
     }
 }

@@ -9,7 +9,7 @@ public class ScaleFactory {
 
     private static final int ALL_NOTES = Note.values().length;
 
-    private Set<Scale> scales = new HashSet<Scale>();
+    private Set<Scale> scales = new HashSet<>();
 
     public ScaleFactory() {
         for (Note note : Note.values()) {
